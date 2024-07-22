@@ -6,7 +6,6 @@ use std::sync::mpsc::{self};
 use std::sync::{ Arc, Mutex};
 use std::thread;
 use std::time::Instant;
-
 use clap::Parser;
 use kwc::arg_parser;
 use kwc::computation::{count_line, process_count_every_word, word_count_in_map};
