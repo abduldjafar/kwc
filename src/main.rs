@@ -8,8 +8,8 @@ use std::thread;
 use std::time::Instant;
 
 use clap::Parser;
-use rust_text_processing::arg_parser;
-use rust_text_processing::computation::{count_line, process_count_every_word, word_count_in_map};
+use kwc::arg_parser;
+use kwc::computation::{count_line, process_count_every_word, word_count_in_map};
 
 fn main() -> io::Result<()> {
     let args = arg_parser::Args::parse();
@@ -22,7 +22,7 @@ fn main() -> io::Result<()> {
     let chunk_size: usize = args.chunk_size.try_into().unwrap();
 
     if !word_count && !line_count && !map_count {
-        println!("please run rust-text-processing --help for more information");
+        println!("please run kwc --help for more information");
         exit(0);
     }
 

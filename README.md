@@ -17,6 +17,29 @@
   - **kwc** takes **45 seconds** for word count and line count.
   - For word count, map count, and line count, **kwc** takes **104 seconds**.
 
+## Testing Results
+
+Here are the results of running **kwc** on a test file:
+
+1. With 5 threads and a chunk size of 1,000,000:
+    ```sh
+    ./target/release/kwc -f testing.txt -l -w -m -t 5 -c 1000000
+    Duration to push data to workers: 49.652787s
+    Total word count: 2,903,602,138
+    Total line count: 322,622,460
+    Total word count in map: {"xaxaxaxaxaxaxa": 322,622,459, "laksalsalksoqoqiwoqw": 322,622,459, "xaxaxaxa": 322,622,461, "axaxaxaxax": 322,622,460, "xaxaxaxaxaxaxaxaxaxa": 322,622,460, "qmwkqjwjqwj": 322,622,459, "xaxaxax": 645,244,920, "xaxaxaxaxaxa": 322,622,460}
+    Time taken: 104.467185417s
+    ```
+
+2. With 20 threads and a chunk size of 1,000,000:
+    ```sh
+    ./target/release/kwc -f testing.txt -l -w -t 20 -c 1000000
+    Duration to push data to workers: 44.603708209s
+    Total word count: 2,903,602,138
+    Total line count: 322,622,460
+    Time taken: 44.673769542s
+    ```
+
 ## Features
 
 - **Word Count:** Quickly counts the number of words in a file.
